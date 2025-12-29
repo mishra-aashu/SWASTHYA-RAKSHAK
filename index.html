@@ -5,16 +5,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Swasthya Rakshak | National Health Surveillance</title>
+    <!-- Tailwind Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Tailwind Configuration to match the theme
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Noto Sans', 'Noto Sans Devanagari', 'sans-serif'],
+              heading: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              govBlueDark: '#003366',
+              govBlue: '#004d99',
+              saffron: '#FF9933',
+              green: '#138808',
+            }
+          }
+        }
+      }
+    </script>
     <style>
-      body {
-        font-family: 'Noto Sans', 'Noto Sans Devanagari', sans-serif;
-        background-color: #F3F4F6;
-      }
-      .font-heading {
-        font-family: 'Poppins', sans-serif;
-      }
       @keyframes pulse-red {
         0%, 100% { background-color: #DC2626; }
         50% { background-color: #991B1B; }
@@ -22,31 +35,31 @@
       .animate-pulse-red {
         animation: pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
       }
-      /* Hide scrollbar for Chrome, Safari and Opera */
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
-      /* Hide scrollbar for IE, Edge and Firefox */
       .no-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "recharts": "https://esm.sh/recharts@^3.6.0",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.48.1",
-    "lucide-react": "https://esm.sh/lucide-react@0.475.0"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.2.0",
+        "react/": "https://esm.sh/react@18.2.0/",
+        "react-dom": "https://esm.sh/react-dom@18.2.0",
+        "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+        "react-router-dom": "https://esm.sh/react-router-dom@6.22.3",
+        "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.8",
+        "lucide-react": "https://esm.sh/lucide-react@0.321.0",
+        "recharts": "https://esm.sh/recharts@2.12.2"
+      }
+    }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
