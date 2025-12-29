@@ -18,18 +18,36 @@ import {
   Info, 
   Phone, 
   Navigation,
-  Bot
+  Bot,
+  AlertOctagon,
+  FileText
 } from 'lucide-react';
 
 const UserHome = () => {
   const [activeTab, setActiveTab] = useState('predictions');
   const [symptomInput, setSymptomInput] = useState('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [analysisResult, setAnalysisResult] = useState<any>(null);
 
   const handleAnalyze = () => {
     if (!symptomInput.trim()) return;
     setIsAnalyzing(true);
-    setTimeout(() => setIsAnalyzing(false), 2000);
+    setAnalysisResult(null);
+    
+    // Simulating AI Analysis
+    setTimeout(() => {
+      setIsAnalyzing(false);
+      setAnalysisResult({
+        condition: "Potential Viral Fever",
+        conditionHindi: "संभावित वायरल बुखार",
+        risk: "Low",
+        severityColor: "text-green-600",
+        advice: "Rest, stay hydrated, and monitor temperature. If symptoms worsen, visit PHC Patna Sadar.",
+        adviceHindi: "आराम करें, हाइड्रेटेड रहें और तापमान की निगरानी करें। यदि लक्षण बिगड़ते हैं, तो पीएचसी पटना सदर जाएँ।",
+        precaution: ["Stay away from children", "Use separate towels"],
+        precautionHindi: ["बच्चों से दूर रहें", "अलग तौलिए का प्रयोग करें"]
+      });
+    }, 1800);
   };
 
   return (
@@ -152,6 +170,53 @@ const UserHome = () => {
                       </>
                     )}
                   </button>
+
+                  {analysisResult && (
+                    <div className="mt-8 w-full bg-white border-2 border-[#138808]/20 rounded-2xl overflow-hidden animate-slideUp">
+                      <div className="bg-[#138808]/5 p-4 border-b border-[#138808]/10 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle2 className="w-5 h-5 text-[#138808]" />
+                          <span className="text-xs font-bold uppercase text-[#138808] tracking-widest">Analysis Result</span>
+                        </div>
+                        <span className="text-[10px] font-bold text-gray-400">Powered by Gemini AI</span>
+                      </div>
+                      <div className="p-6 text-left">
+                        <div className="mb-4">
+                          <h4 className="text-lg font-bold text-[#003366]">{analysisResult.condition}</h4>
+                          <p className="text-xs text-gray-500 font-medium">{analysisResult.conditionHindi}</p>
+                        </div>
+                        <div className="flex items-center gap-4 mb-6">
+                           <div className="flex-1 bg-gray-50 p-3 rounded-xl border border-gray-100">
+                             <p className="text-[8px] font-bold text-gray-400 uppercase tracking-widest mb-1">Risk Level</p>
+                             <p className={`text-sm font-bold ${analysisResult.severityColor}`}>{analysisResult.risk}</p>
+                           </div>
+                           <div className="flex-1 bg-gray-50 p-3 rounded-xl border border-gray-100">
+                             <p className="text-[8px] font-bold text-gray-400 uppercase tracking-widest mb-1">Recommended Action</p>
+                             <p className="text-sm font-bold text-[#003366]">Self-Care</p>
+                           </div>
+                        </div>
+                        <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 mb-6">
+                          <div className="flex items-start gap-3">
+                            <Info className="w-5 h-5 text-[#003366] mt-0.5" />
+                            <div>
+                              <p className="text-sm font-medium text-[#003366]">{analysisResult.advice}</p>
+                              <p className="text-xs text-blue-600/70 mt-1 font-medium italic">{analysisResult.adviceHindi}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Immediate Precautions</p>
+                          {analysisResult.precaution.map((p: string, i: number) => (
+                            <div key={i} className="flex items-center gap-2 text-xs font-medium text-gray-600">
+                              <CheckCircle2 className="w-3 h-3 text-[#138808]" />
+                              {p}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   <p className="text-[10px] text-gray-400 font-medium">
                     Disclaimer: This is for informational purposes only. Always consult a qualified medical professional.
                   </p>
