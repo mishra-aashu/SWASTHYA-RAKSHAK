@@ -37,7 +37,7 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <TricolorBar />
-      <header className="bg-[#0D47A1] px-4 md:px-8 py-4 shadow-lg sticky top-0 z-50">
+      <header className="bg-primary px-4 md:px-8 py-4 shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
           <Link to="/" className="hover:opacity-90 transition-opacity">
             <GovLogo />
