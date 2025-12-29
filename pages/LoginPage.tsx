@@ -4,6 +4,7 @@ import { useAuth } from '../App';
 import { useNavigate } from 'react-router-dom';
 import { TricolorBar } from '../constants';
 import { signInWithGoogle } from '../lib/supabase';
+import { Hospital, MapPin, Bot, User, Plus } from 'lucide-react';
 
 const LoginPage = () => {
   const { login } = useAuth();
@@ -42,10 +43,14 @@ const LoginPage = () => {
       <div className="flex-1 flex flex-col items-center justify-center p-4">
         <div className="max-w-md w-full bg-white rounded-xl shadow-2xl overflow-hidden border-t-8 border-[#003366]">
           <div className="bg-[#003366] p-8 text-center relative overflow-hidden">
-            {/* Ashoka Chakra background decor */}
-            <div className="absolute -right-8 -bottom-8 opacity-10 text-white text-9xl">☸</div>
+            {/* Subtle background pattern using Plus icons instead of unicode symbols */}
+            <div className="absolute -right-4 -bottom-4 opacity-5 text-white">
+              <Plus className="w-32 h-32" />
+            </div>
             <div className="mb-4 flex justify-center relative">
-              <span className="text-6xl drop-shadow-lg">🏥</span>
+              <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
+                <Hospital className="w-12 h-12 text-white drop-shadow-lg" />
+              </div>
             </div>
             <h2 className="text-white text-3xl font-bold font-heading relative">स्वास्थ्य रक्षक</h2>
             <p className="text-white/80 text-sm mt-1 font-medium relative">Swasthya Rakshak</p>
@@ -90,7 +95,7 @@ const LoginPage = () => {
                   <div className="w-full border-t border-gray-200"></div>
                 </div>
                 <div className="relative flex justify-center text-xs">
-                  <span className="px-2 bg-white text-gray-400 font-bold uppercase">Or Use Demo</span>
+                  <span className="px-2 bg-white text-gray-400 font-bold uppercase tracking-widest text-[10px]">Or Use Demo</span>
                 </div>
               </div>
 
@@ -98,17 +103,17 @@ const LoginPage = () => {
                 onClick={handleGuestLogin}
                 className="w-full bg-gray-50 border-2 border-gray-200 text-gray-600 p-4 rounded-lg font-bold text-sm hover:bg-gray-100 hover:border-gray-300 transition-all flex items-center justify-center gap-2"
               >
-                <span>👤</span> गेस्ट लॉगिन (डेमो) | Guest Access (Demo)
+                <User className="w-4 h-4" /> गेस्ट लॉगिन (डेमो) | Guest Access (Demo)
               </button>
             </div>
 
             <div className="mt-8 grid grid-cols-2 gap-3">
               <div className="flex flex-col items-center p-3 bg-blue-50/50 rounded-lg border border-blue-100">
-                <span className="text-xl mb-1">📍</span>
+                <MapPin className="w-6 h-6 text-blue-600 mb-1" />
                 <p className="text-[10px] font-bold text-blue-800 text-center">Location Alerts</p>
               </div>
               <div className="flex flex-col items-center p-3 bg-green-50/50 rounded-lg border border-green-100">
-                <span className="text-xl mb-1">🤖</span>
+                <Bot className="w-6 h-6 text-green-600 mb-1" />
                 <p className="text-[10px] font-bold text-green-800 text-center">AI Predictions</p>
               </div>
             </div>

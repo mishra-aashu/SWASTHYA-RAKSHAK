@@ -2,7 +2,24 @@
 import React, { useState } from 'react';
 import { mockReports, mockAlerts, mockPredictions, patnaBlocks } from '../data/mockData';
 import { Prediction } from '../types';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { 
+  AlertTriangle, 
+  MapPin, 
+  Activity, 
+  CheckCircle, 
+  CheckCircle2,
+  AlertCircle, 
+  Search, 
+  Biohazard, 
+  Clock, 
+  Droplets, 
+  Stethoscope, 
+  Info, 
+  Phone, 
+  Navigation,
+  Bot
+} from 'lucide-react';
 
 const UserHome = () => {
   const [activeTab, setActiveTab] = useState('predictions');
@@ -20,7 +37,7 @@ const UserHome = () => {
       {/* Emergency Alert Banner */}
       <div className="animate-pulse-red bg-[#DC2626] text-white p-4 text-center sticky top-[72px] z-40 shadow-md">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-3">
-          <span className="text-xl animate-bounce">⚠️</span>
+          <AlertTriangle className="w-5 h-5 animate-bounce" />
           <p className="font-bold text-sm">
             आपातकालीन सूचना: पटना सदर में डेंगू के मामले बढ़ रहे हैं। | ALERT: Dengue spike in Patna Sadar.
           </p>
@@ -36,7 +53,7 @@ const UserHome = () => {
                 <div>
                   <h3 className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Current Active Zone</h3>
                   <div className="flex items-center gap-2 mt-1">
-                    <span className="text-2xl">📍</span>
+                    <MapPin className="w-6 h-6 text-[#003366]" />
                     <h2 className="text-xl font-bold text-[#003366]">Patna Sadar, Bihar</h2>
                   </div>
                 </div>
@@ -47,9 +64,9 @@ const UserHome = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <StatsCard label="Today's Cases" value="24" icon="🆕" color="#003366" />
-              <StatsCard label="Recovered" value="18" icon="✅" color="#138808" />
-              <StatsCard label="Active Alerts" value="03" icon="🚨" color="#EA580C" />
+              <StatsCard label="Today's Cases" value="24" icon={<Activity className="w-6 h-6" />} color="#003366" />
+              <StatsCard label="Recovered" value="18" icon={<CheckCircle className="w-6 h-6" />} color="#138808" />
+              <StatsCard label="Active Alerts" value="03" icon={<AlertCircle className="w-6 h-6" />} color="#EA580C" />
             </div>
           </div>
 
@@ -100,7 +117,9 @@ const UserHome = () => {
             
             {activeTab === 'symptom' && (
               <div className="flex flex-col items-center justify-center py-8 text-center max-w-2xl mx-auto animate-fadeIn">
-                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center text-4xl mb-6 shadow-inner">🔍</div>
+                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center text-[#003366] mb-6 shadow-inner">
+                  <Search className="w-10 h-10" />
+                </div>
                 <h3 className="text-2xl font-bold text-[#003366] font-heading">AI Symptom Analysis</h3>
                 <p className="text-gray-500 mt-2 mb-8 leading-relaxed">
                   Enter your symptoms below. Our AI assistant will analyze potential risks and direct you to the nearest PHC if necessary.
@@ -114,7 +133,7 @@ const UserHome = () => {
                       placeholder="e.g. High fever, headache, joint pain..." 
                       className="w-full border-2 border-gray-100 p-5 pl-14 rounded-2xl focus:border-[#003366] focus:ring-4 focus:ring-blue-50 outline-none transition-all text-lg shadow-sm group-hover:border-gray-200" 
                     />
-                    <span className="absolute left-5 top-1/2 -translate-y-1/2 text-2xl opacity-30">🦠</span>
+                    <Biohazard className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-300" />
                   </div>
                   <button 
                     onClick={handleAnalyze}
@@ -128,7 +147,8 @@ const UserHome = () => {
                       </>
                     ) : (
                       <>
-                        <span>🤖 एआई से विश्लेषण करें | Analyze with AI</span>
+                        <Bot className="w-6 h-6" />
+                        <span>एआई से विश्लेषण करें | Analyze with AI</span>
                       </>
                     )}
                   </button>
@@ -142,18 +162,18 @@ const UserHome = () => {
             {activeTab === 'advisory' && (
               <div className="space-y-8 animate-fadeIn">
                 <div className="bg-gradient-to-r from-[#0066cc] to-[#004d99] p-8 rounded-2xl text-white shadow-lg relative overflow-hidden">
-                  <div className="absolute top-0 right-0 p-4 opacity-10 text-9xl">⚕️</div>
+                  <Stethoscope className="absolute top-0 right-0 w-32 h-32 opacity-10 -mr-8 -mt-8" />
                   <h3 className="text-2xl font-bold flex items-center gap-3">
-                    🌊 Monsoon Safety Advisory
+                    <Droplets className="w-8 h-8" /> Monsoon Safety Advisory
                   </h3>
                   <p className="text-sm text-white/80 mt-2 max-w-xl">
                     Health guidelines issued by the Ministry of Health for the 2024 Monsoon season in Bihar.
                   </p>
                 </div>
                 <div className="grid md:grid-cols-3 gap-6">
-                  <AdvisoryItem icon="💧" title="Safe Drinking Water" text="Always boil water for at least 20 minutes during monsoons to prevent waterborne outbreaks like Cholera." />
-                  <AdvisoryItem icon="🦟" title="Vector Control" text="Clear stagnant water from pots and coolers. Use nets or repellents to prevent Dengue and Malaria." />
-                  <AdvisoryItem icon="🏥" title="Immediate Reporting" text="Report cases of high fever with shivering to your nearest ASHA worker or PHC immediately." />
+                  <AdvisoryItem icon={<Droplets className="w-6 h-6" />} title="Safe Drinking Water" text="Always boil water for at least 20 minutes during monsoons to prevent waterborne outbreaks like Cholera." />
+                  <AdvisoryItem icon={<Activity className="w-6 h-6" />} title="Vector Control" text="Clear stagnant water from pots and coolers. Use nets or repellents to prevent Dengue and Malaria." />
+                  <AdvisoryItem icon={<AlertCircle className="w-6 h-6" />} title="Immediate Reporting" text="Report cases of high fever with shivering to your nearest ASHA worker or PHC immediately." />
                 </div>
               </div>
             )}
@@ -164,7 +184,7 @@ const UserHome = () => {
         <div className="space-y-6">
           <div className="flex items-center justify-between px-2">
             <h3 className="text-xl font-bold text-[#003366] flex items-center gap-2">
-              <span className="text-[#FF9933]">📍</span> Nearby Health Kendras | निकटतम स्वास्थ्य केंद्र
+              <MapPin className="text-[#FF9933] w-6 h-6" /> Nearby Health Kendras | निकटतम स्वास्थ्य केंद्र
             </h3>
             <button className="text-xs font-bold text-[#003366] hover:text-[#FF9933] transition-colors">View Map →</button>
           </div>
@@ -179,10 +199,10 @@ const UserHome = () => {
   );
 };
 
-const StatsCard = ({ label, value, icon, color }: { label: string, value: string, icon: string, color: string }) => (
+const StatsCard = ({ label, value, icon, color }: { label: string, value: string, icon: React.ReactNode, color: string }) => (
   <div className="bg-white p-6 rounded-xl shadow-md border-b-4 transition-all hover:-translate-y-1" style={{ borderColor: color }}>
     <div className="flex items-center justify-between mb-3">
-      <span className="text-2xl drop-shadow-sm">{icon}</span>
+      <div style={{ color }}>{icon}</div>
       <span className="text-3xl font-black font-heading" style={{ color }}>{value}</span>
     </div>
     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{label}</p>
@@ -216,7 +236,7 @@ const PredictionCard: React.FC<{ prediction: Prediction }> = ({ prediction }) =>
         </div>
       </div>
       <div className="flex items-center gap-3 mb-6 p-3 bg-blue-50/50 rounded-xl border border-blue-100/50">
-        <span className="text-lg opacity-50">⏳</span>
+        <Clock className="w-5 h-5 text-blue-400" />
         <div>
           <p className="text-[8px] font-bold text-blue-400 uppercase tracking-widest leading-none">Peak Forecast</p>
           <p className="text-xs font-bold text-[#003366] mt-1">{prediction.peakExpected}</p>
@@ -230,7 +250,7 @@ const PredictionCard: React.FC<{ prediction: Prediction }> = ({ prediction }) =>
         <ul className="text-xs text-gray-600 space-y-2">
           {prediction.preventionTips.map((tip, i) => (
             <li key={i} className="flex items-start gap-3 bg-gray-50/50 p-2 rounded-lg transition-all hover:bg-gray-100">
-              <span className="text-[#138808] font-bold">●</span> 
+              <CheckCircle2 className="w-3 h-3 text-[#138808] mt-0.5" /> 
               <span className="font-medium">{tip}</span>
             </li>
           ))}
@@ -243,12 +263,12 @@ const PredictionCard: React.FC<{ prediction: Prediction }> = ({ prediction }) =>
   </div>
 );
 
-const AdvisoryItem = ({ icon, title, text }: { icon: string, title: string, text: string }) => (
+const AdvisoryItem = ({ icon, title, text }: { icon: React.ReactNode, title: string, text: string }) => (
   <div className="p-6 bg-white rounded-2xl hover:shadow-lg transition-all border border-gray-100 group relative">
     <div className="absolute top-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
-       <span className="text-[#003366] text-xl">ℹ️</span>
+       <Info className="text-[#003366] w-5 h-5" />
     </div>
-    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#003366] mb-4 group-hover:scale-110 transition-transform">
       {icon}
     </div>
     <h4 className="font-bold text-gray-800 mb-2 font-heading">{title}</h4>
@@ -269,8 +289,12 @@ const KendraCard = ({ name, address, distance, contact, type }: { name: string, 
     </div>
     <p className="text-xs text-gray-500 mb-6 font-medium flex-1">{address}</p>
     <div className="flex gap-3">
-      <a href={`tel:${contact}`} className="flex-1 bg-[#F3F4F6] hover:bg-gray-200 text-center py-3 rounded-xl text-[10px] font-bold uppercase text-gray-700 transition-all active:scale-95">Call</a>
-      <button className="flex-1 bg-[#003366] text-white py-3 rounded-xl text-[10px] font-bold uppercase hover:bg-[#004d99] transition-all shadow-sm active:scale-95">Navigate</button>
+      <a href={`tel:${contact}`} className="flex-1 bg-[#F3F4F6] hover:bg-gray-200 flex items-center justify-center rounded-xl text-[10px] font-bold uppercase text-gray-700 transition-all active:scale-95 gap-2">
+        <Phone className="w-3 h-3" /> Call
+      </a>
+      <button className="flex-1 bg-[#003366] text-white flex items-center justify-center rounded-xl text-[10px] font-bold uppercase hover:bg-[#004d99] transition-all shadow-sm active:scale-95 gap-2">
+        <Navigation className="w-3 h-3" /> Navigate
+      </button>
     </div>
   </div>
 );

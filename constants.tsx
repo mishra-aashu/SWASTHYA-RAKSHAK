@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Landmark } from 'lucide-react';
 
 export const COLORS = {
   govBlueDark: '#003366',
@@ -25,8 +26,8 @@ export const TricolorBar = () => (
 
 export const GovLogo = () => (
   <div className="flex items-center gap-3">
-    <div className="bg-white p-1 rounded-full w-12 h-12 flex items-center justify-center">
-       <span className="text-2xl">🏛️</span>
+    <div className="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center">
+       <Landmark className="text-[#003366] w-6 h-6" />
     </div>
     <div className="flex flex-col text-white">
       <h1 className="text-lg font-bold leading-tight">स्वास्थ्य एवं परिवार कल्याण मंत्रालय</h1>
