@@ -47,7 +47,7 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
               <div className="flex items-center gap-3">
                 <div className="text-right hidden sm:block">
                   <p className="text-white text-sm font-bold">{user.full_name}</p>
-                  <p className="text-[#FFC107] text-[10px] uppercase font-bold">{user.role}</p>
+                  <p className="text-secondary text-[10px] uppercase font-bold">{user.role}</p>
                 </div>
                 <button 
                   onClick={() => { logout(); navigate('/login'); }}
@@ -63,16 +63,16 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
       <main className="flex-1">
         {children}
       </main>
-      <footer className="bg-[#0D47A1] text-white py-8 border-t-4 border-[#FFC107]">
+      <footer className="bg-primary text-white py-8 border-t-4 border-[#FFC107]">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm opacity-80 mb-2">© 2025 स्वास्थ्य रक्षक | Swasthya Rakshak</p>
           <p className="text-[10px] opacity-60 uppercase tracking-widest">National Health Surveillance System</p>
           <div className="mt-4 flex justify-center gap-4 text-[10px] opacity-60 uppercase tracking-widest">
-            <a href="#" className="hover:text-[#FFC107]">Privacy Policy</a>
+            <a href="#" className="hover:text-secondary">Privacy Policy</a>
             <span>|</span>
-            <a href="#" className="hover:text-[#FFC107]">Terms of Service</a>
+            <a href="#" className="hover:text-secondary">Terms of Service</a>
             <span>|</span>
-            <a href="#" className="hover:text-[#FFC107]">Contact Us</a>
+            <a href="#" className="hover:text-secondary">Contact Us</a>
           </div>
         </div>
       </footer>
