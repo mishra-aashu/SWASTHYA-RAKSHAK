@@ -8,6 +8,7 @@ import UserHome from './pages/UserHome';
 import KendraDashboard from './pages/KendraDashboard';
 import { TricolorBar, GovLogo } from './constants';
 import { supabase } from './lib/supabase';
+import './App.css'; // Import App.css
 
 interface AuthContextType {
   user: UserProfile | null;
@@ -35,23 +36,23 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="layoutContainer">
       <TricolorBar />
-      <header className="bg-primary px-4 md:px-8 py-4 shadow-lg sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
-          <Link to="/" className="hover:opacity-90 transition-opacity">
+      <header className="header">
+        <div className="headerContent">
+          <Link to="/" className="logoLink">
             <GovLogo />
           </Link>
-          <div className="flex items-center gap-4">
+          <div className="userSection">
             {user && (
-              <div className="flex items-center gap-3">
-                <div className="text-right hidden sm:block">
-                  <p className="text-white text-sm font-bold">{user.full_name}</p>
-                  <p className="text-secondary text-[10px] uppercase font-bold">{user.role}</p>
+              <div className="userInfo">
+                <div className="userNameRole">
+                  <p className="userName">{user.full_name}</p>
+                  <p className="userRole">{user.role}</p>
                 </div>
                 <button 
                   onClick={() => { logout(); navigate('/login'); }}
-                  className="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded text-xs transition-colors border border-white/20"
+                  className="logoutButton"
                 >
                   लॉगआउट | Logout
                 </button>
@@ -60,19 +61,19 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
           </div>
         </div>
       </header>
-      <main className="flex-1">
+      <main className="mainContent">
         {children}
       </main>
-      <footer className="bg-primary text-white py-8 border-t-4 border-[#FFC107]">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-sm opacity-80 mb-2">© 2025 स्वास्थ्य रक्षक | Swasthya Rakshak</p>
-          <p className="text-[10px] opacity-60 uppercase tracking-widest">National Health Surveillance System</p>
-          <div className="mt-4 flex justify-center gap-4 text-[10px] opacity-60 uppercase tracking-widest">
-            <a href="#" className="hover:text-secondary">Privacy Policy</a>
+      <footer className="footer">
+        <div className="footerContent">
+          <p className="footerText">© 2025 स्वास्थ्य रक्षक | Swasthya Rakshak</p>
+          <p className="footerSubText">National Health Surveillance System</p>
+          <div className="footerLinks">
+            <a href="#" className="footerLink">Privacy Policy</a>
             <span>|</span>
-            <a href="#" className="hover:text-secondary">Terms of Service</a>
+            <a href="#" className="footerLink">Terms of Service</a>
             <span>|</span>
-            <a href="#" className="hover:text-secondary">Contact Us</a>
+            <a href="#" className="footerLink">Contact Us</a>
           </div>
         </div>
       </footer>
@@ -133,7 +134,7 @@ const App = () => {
     setUser({
       id: 'demo-user-id',
       email: 'user@bihar.gov.in',
-      full_name: 'Rahul Kumar',
+      full_name: '', // Removed "Rahul Kumar"
       avatar_url: '',
       role: role,
       district: 'Patna',

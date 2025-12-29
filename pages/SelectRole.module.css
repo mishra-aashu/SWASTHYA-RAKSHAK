@@ -1,0 +1,107 @@
+/* SelectRole.module.css */
+
+.selectRoleContainer {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* p-4 */
+}
+
+.selectRoleContent {
+  max-width: 64rem; /* max-w-4xl */
+  width: 100%;
+}
+
+.selectRoleHeader {
+  text-align: center;
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+.selectRoleTitle {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  color: var(--primary-color);
+}
+
+.selectRoleSubtitle {
+  color: #6b7280; /* text-gray-600 */
+  margin-top: 0.5rem; /* mt-2 */
+}
+
+.roleCardGrid {
+  display: grid;
+  gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 768px) { /* md */
+  .roleCardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.roleCard {
+  background-color: var(--white-color);
+  padding: 2rem; /* p-8 */
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  transition: all 150ms ease-in-out;
+  border-bottom: 8px solid transparent;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.roleCard:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* hover:shadow-2xl */
+  border-color: var(--secondary-color);
+}
+
+.roleCardIconWrapper {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem; /* mb-6 */
+  transition: all 150ms ease-in-out;
+}
+
+.roleCard:hover .roleCardIconWrapper {
+  transform: scale(1.1);
+  color: var(--secondary-color);
+}
+
+.roleCardIcon {
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+}
+
+.roleCardTitle {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  color: var(--primary-color);
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.roleCardDescription {
+  color: #6b7280; /* text-gray-500 */
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.625; /* leading-relaxed */
+  margin-bottom: 2rem; /* mb-8 */
+  flex: 1;
+}
+
+.roleCardContinueLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+  color: var(--secondary-color);
+  font-weight: 700; /* font-bold */
+  text-transform: uppercase;
+  font-size: 0.75rem; /* text-xs */
+  letter-spacing: 0.05em; /* tracking-wider */
+}
+
+.roleCardContinueIcon {
+  width: 1rem; /* w-4 */
+  height: 1rem; /* h-4 */
+}

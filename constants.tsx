@@ -18,9 +18,9 @@ export const COLORS = {
 
 export const TricolorBar = () => (
   <div className="h-1.5 w-full flex">
-    <div className="flex-1 bg-[#FFC107]"></div>
-    <div className="flex-1 bg-white"></div>
-    <div className="flex-1 bg-[#138808]"></div>
+    <div style={{backgroundColor: COLORS.saffron}} className="flex-1"></div>
+    <div style={{backgroundColor: COLORS.white}} className="flex-1"></div>
+    <div style={{backgroundColor: COLORS.green}} className="flex-1"></div>
   </div>
 );
 
@@ -31,8 +31,8 @@ export const GovLogo = () => (
     </div>
     <div className="flex flex-col text-white">
       <h1 className="text-lg font-bold leading-tight">स्वास्थ्य एवं परिवार कल्याण मंत्रालय</h1>
-      <p className="text-[10px] uppercase tracking-wider opacity-90">Ministry of Health & Family Welfare</p>
-      <p className="text-[10px] opacity-70">भारत सरकार | Government of India</p>
+      <p className="text-[10px] uppercase tracking-wider opacity-100">Ministry of Health & Family Welfare</p>
+      <p className="text-[10px] opacity-90">भारत सरकार | Government of India</p>
     </div>
   </div>
 );
