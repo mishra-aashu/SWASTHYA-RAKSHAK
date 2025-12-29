@@ -66,30 +66,30 @@ const UserHome = () => {
         {/* Top Section: Location & Health Meter */}
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-8 border-[#003366] transition-transform hover:scale-[1.01]">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-8 border-[#0D47A1] transition-transform hover:scale-[1.01]">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
                   <h3 className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Current Active Zone</h3>
                   <div className="flex items-center gap-2 mt-1">
-                    <MapPin className="w-6 h-6 text-[#003366]" />
-                    <h2 className="text-xl font-bold text-[#003366]">Patna Sadar, Bihar</h2>
+                    <MapPin className="w-6 h-6 text-[#0D47A1]" />
+                    <h2 className="text-xl font-bold text-[#0D47A1]">Patna Sadar, Bihar</h2>
                   </div>
                 </div>
-                <button className="bg-[#003366] text-white px-4 py-2 rounded-lg text-xs font-bold transition-all hover:bg-[#004d99] shadow-sm">
+                <button className="bg-[#0D47A1] text-white px-4 py-2 rounded-lg text-xs font-bold transition-all hover:bg-[#004d99] shadow-sm">
                   स्थान बदलें | Update Location
                 </button>
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <StatsCard label="Today's Cases" value="24" icon={<Activity className="w-6 h-6" />} color="#003366" />
+              <StatsCard label="Today's Cases" value="24" icon={<Activity className="w-6 h-6" />} color="#0D47A1" />
               <StatsCard label="Recovered" value="18" icon={<CheckCircle className="w-6 h-6" />} color="#138808" />
               <StatsCard label="Active Alerts" value="03" icon={<AlertCircle className="w-6 h-6" />} color="#EA580C" />
             </div>
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-md text-center flex flex-col items-center justify-center relative overflow-hidden group">
-            <div className="absolute top-0 left-0 w-full h-2 bg-[#FF9933]"></div>
+            <div className="absolute top-0 left-0 w-full h-2 bg-[#FFC107]"></div>
             <h3 className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-6">Locality Health Score</h3>
             <div className="relative w-44 h-44 flex items-center justify-center">
                <svg className="w-full h-full transform -rotate-90">
@@ -97,7 +97,7 @@ const UserHome = () => {
                  <circle cx="88" cy="88" r="75" stroke="#138808" strokeWidth="14" fill="transparent" strokeDasharray="471" strokeDashoffset="117" strokeLinecap="round" className="transition-all duration-1000 ease-out" />
                </svg>
                <div className="absolute inset-0 flex flex-col items-center justify-center animate-fadeIn">
-                 <span className="text-5xl font-black text-[#003366]">75%</span>
+                 <span className="text-5xl font-black text-[#0D47A1]">75%</span>
                  <span className="text-[11px] font-bold text-[#138808] uppercase mt-1">Safe | सुरक्षित</span>
                </div>
             </div>
@@ -118,10 +118,10 @@ const UserHome = () => {
               <div className="space-y-8 animate-fadeIn">
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-[#003366] font-heading">AI Outbreak Forecasting</h3>
+                    <h3 className="text-2xl font-bold text-[#0D47A1] font-heading">AI Outbreak Forecasting</h3>
                     <p className="text-sm text-gray-500">Predictive analytics based on monsoon trends and climate data.</p>
                   </div>
-                  <span className="bg-[#FF9933]/10 text-[#FF9933] px-4 py-1.5 rounded-full text-[10px] font-bold uppercase border border-[#FF9933]/20">
+                  <span className="bg-[#FFC107]/10 text-[#FFC107] px-4 py-1.5 rounded-full text-[10px] font-bold uppercase border border-[#FFC107]/20">
                     Live Surveillance Mode
                   </span>
                 </div>
@@ -135,10 +135,10 @@ const UserHome = () => {
             
             {activeTab === 'symptom' && (
               <div className="flex flex-col items-center justify-center py-8 text-center max-w-2xl mx-auto animate-fadeIn">
-                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center text-[#003366] mb-6 shadow-inner">
+                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center text-[#0D47A1] mb-6 shadow-inner">
                   <Search className="w-10 h-10" />
                 </div>
-                <h3 className="text-2xl font-bold text-[#003366] font-heading">AI Symptom Analysis</h3>
+                <h3 className="text-2xl font-bold text-[#0D47A1] font-heading">AI Symptom Analysis</h3>
                 <p className="text-gray-500 mt-2 mb-8 leading-relaxed">
                   Enter your symptoms below. Our AI assistant will analyze potential risks and direct you to the nearest PHC if necessary.
                 </p>
@@ -149,14 +149,14 @@ const UserHome = () => {
                       value={symptomInput}
                       onChange={(e) => setSymptomInput(e.target.value)}
                       placeholder="e.g. High fever, headache, joint pain..." 
-                      className="w-full border-2 border-gray-100 p-5 pl-14 rounded-2xl focus:border-[#003366] focus:ring-4 focus:ring-blue-50 outline-none transition-all text-lg shadow-sm group-hover:border-gray-200" 
+                      className="w-full border-2 border-gray-100 p-5 pl-14 rounded-2xl focus:border-[#0D47A1] focus:ring-4 focus:ring-blue-50 outline-none transition-all text-lg shadow-sm group-hover:border-gray-200" 
                     />
                     <Biohazard className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-300" />
                   </div>
                   <button 
                     onClick={handleAnalyze}
                     disabled={isAnalyzing}
-                    className={`w-full bg-[#003366] text-white p-5 rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 active:scale-[0.98] flex items-center justify-center gap-3 text-lg ${isAnalyzing ? 'opacity-70 cursor-wait' : ''}`}
+                    className={`w-full bg-[#0D47A1] text-white p-5 rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 active:scale-[0.98] flex items-center justify-center gap-3 text-lg ${isAnalyzing ? 'opacity-70 cursor-wait' : ''}`}
                   >
                     {isAnalyzing ? (
                       <>
@@ -182,7 +182,7 @@ const UserHome = () => {
                       </div>
                       <div className="p-6 text-left">
                         <div className="mb-4">
-                          <h4 className="text-lg font-bold text-[#003366]">{analysisResult.condition}</h4>
+                          <h4 className="text-lg font-bold text-[#0D47A1]">{analysisResult.condition}</h4>
                           <p className="text-xs text-gray-500 font-medium">{analysisResult.conditionHindi}</p>
                         </div>
                         <div className="flex items-center gap-4 mb-6">
@@ -192,14 +192,14 @@ const UserHome = () => {
                            </div>
                            <div className="flex-1 bg-gray-50 p-3 rounded-xl border border-gray-100">
                              <p className="text-[8px] font-bold text-gray-400 uppercase tracking-widest mb-1">Recommended Action</p>
-                             <p className="text-sm font-bold text-[#003366]">Self-Care</p>
+                             <p className="text-sm font-bold text-[#0D47A1]">Self-Care</p>
                            </div>
                         </div>
                         <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 mb-6">
                           <div className="flex items-start gap-3">
-                            <Info className="w-5 h-5 text-[#003366] mt-0.5" />
+                            <Info className="w-5 h-5 text-[#0D47A1] mt-0.5" />
                             <div>
-                              <p className="text-sm font-medium text-[#003366]">{analysisResult.advice}</p>
+                              <p className="text-sm font-medium text-[#0D47A1]">{analysisResult.advice}</p>
                               <p className="text-xs text-blue-600/70 mt-1 font-medium italic">{analysisResult.adviceHindi}</p>
                             </div>
                           </div>
@@ -248,10 +248,10 @@ const UserHome = () => {
         {/* Nearby Health Kendras */}
         <div className="space-y-6">
           <div className="flex items-center justify-between px-2">
-            <h3 className="text-xl font-bold text-[#003366] flex items-center gap-2">
-              <MapPin className="text-[#FF9933] w-6 h-6" /> Nearby Health Kendras | निकटतम स्वास्थ्य केंद्र
+            <h3 className="text-xl font-bold text-[#0D47A1] flex items-center gap-2">
+              <MapPin className="text-[#FFC107] w-6 h-6" /> Nearby Health Kendras | निकटतम स्वास्थ्य केंद्र
             </h3>
-            <button className="text-xs font-bold text-[#003366] hover:text-[#FF9933] transition-colors">View Map →</button>
+            <button className="text-xs font-bold text-[#0D47A1] hover:text-[#FFC107] transition-colors">View Map →</button>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
              <KendraCard name="PHC Patna Sadar" address="Near Gandhi Maidan, Patna" distance="1.2 km" contact="0612-2345678" type="PHC" />
@@ -277,7 +277,7 @@ const StatsCard = ({ label, value, icon, color }: { label: string, value: string
 const TabButton = ({ active, label, hindi, onClick }: { active: boolean, label: string, hindi: string, onClick: () => void }) => (
   <button 
     onClick={onClick}
-    className={`px-10 py-6 text-sm font-bold transition-all border-b-4 ${active ? 'border-[#FF9933] text-[#003366] bg-white' : 'border-transparent text-gray-400 hover:text-gray-600 hover:bg-gray-100/50'}`}
+    className={`px-10 py-6 text-sm font-bold transition-all border-b-4 ${active ? 'border-[#FFC107] text-[#0D47A1] bg-white' : 'border-transparent text-gray-400 hover:text-gray-600 hover:bg-gray-100/50'}`}
   >
     <div className="flex flex-col items-center">
       <span className="font-heading tracking-tight">{label}</span>
@@ -296,7 +296,7 @@ const PredictionCard: React.FC<{ prediction: Prediction }> = ({ prediction }) =>
           <p className="text-xs text-gray-500 font-medium">{prediction.diseaseHindi}</p>
         </div>
         <div className="text-right bg-gray-50 p-2 rounded-xl border border-gray-100">
-          <p className="text-2xl font-black text-[#003366] leading-none">{prediction.probability}%</p>
+          <p className="text-2xl font-black text-[#0D47A1] leading-none">{prediction.probability}%</p>
           <p className="text-[8px] font-bold uppercase text-gray-400 mt-1">Probability</p>
         </div>
       </div>
@@ -304,7 +304,7 @@ const PredictionCard: React.FC<{ prediction: Prediction }> = ({ prediction }) =>
         <Clock className="w-5 h-5 text-blue-400" />
         <div>
           <p className="text-[8px] font-bold text-blue-400 uppercase tracking-widest leading-none">Peak Forecast</p>
-          <p className="text-xs font-bold text-[#003366] mt-1">{prediction.peakExpected}</p>
+          <p className="text-xs font-bold text-[#0D47A1] mt-1">{prediction.peakExpected}</p>
         </div>
       </div>
       <div className="space-y-3">
@@ -323,7 +323,7 @@ const PredictionCard: React.FC<{ prediction: Prediction }> = ({ prediction }) =>
       </div>
     </div>
     <div className="bg-gray-50 p-3 text-center border-t border-gray-100">
-       <button className="text-[10px] font-bold text-[#003366] uppercase tracking-widest hover:text-[#FF9933] transition-colors">View Block Details</button>
+       <button className="text-[10px] font-bold text-[#0D47A1] uppercase tracking-widest hover:text-[#FFC107] transition-colors">View Block Details</button>
     </div>
   </div>
 );
@@ -331,9 +331,9 @@ const PredictionCard: React.FC<{ prediction: Prediction }> = ({ prediction }) =>
 const AdvisoryItem = ({ icon, title, text }: { icon: React.ReactNode, title: string, text: string }) => (
   <div className="p-6 bg-white rounded-2xl hover:shadow-lg transition-all border border-gray-100 group relative">
     <div className="absolute top-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
-       <Info className="text-[#003366] w-5 h-5" />
+       <Info className="text-[#0D47A1] w-5 h-5" />
     </div>
-    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#003366] mb-4 group-hover:scale-110 transition-transform">
+    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#0D47A1] mb-4 group-hover:scale-110 transition-transform">
       {icon}
     </div>
     <h4 className="font-bold text-gray-800 mb-2 font-heading">{title}</h4>
@@ -342,11 +342,11 @@ const AdvisoryItem = ({ icon, title, text }: { icon: React.ReactNode, title: str
 );
 
 const KendraCard = ({ name, address, distance, contact, type }: { name: string, address: string, distance: string, contact: string, type: string }) => (
-  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-[#003366] transition-all group flex flex-col hover:shadow-md">
+  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-[#0D47A1] transition-all group flex flex-col hover:shadow-md">
     <div className="flex justify-between items-start mb-4">
       <div className="flex flex-col">
-        <span className="text-[8px] font-bold text-[#FF9933] uppercase tracking-widest mb-1">{type}</span>
-        <h4 className="font-bold text-[#003366] group-hover:text-[#FF9933] transition-colors text-lg">{name}</h4>
+        <span className="text-[8px] font-bold text-[#FFC107] uppercase tracking-widest mb-1">{type}</span>
+        <h4 className="font-bold text-[#0D47A1] group-hover:text-[#FFC107] transition-colors text-lg">{name}</h4>
       </div>
       <div className="bg-green-50 text-[#138808] text-[9px] font-bold px-2 py-1 rounded-full border border-green-100">
         {distance}
@@ -357,7 +357,7 @@ const KendraCard = ({ name, address, distance, contact, type }: { name: string, 
       <a href={`tel:${contact}`} className="flex-1 bg-[#F3F4F6] hover:bg-gray-200 flex items-center justify-center rounded-xl text-[10px] font-bold uppercase text-gray-700 transition-all active:scale-95 gap-2">
         <Phone className="w-3 h-3" /> Call
       </a>
-      <button className="flex-1 bg-[#003366] text-white flex items-center justify-center rounded-xl text-[10px] font-bold uppercase hover:bg-[#004d99] transition-all shadow-sm active:scale-95 gap-2">
+      <button className="flex-1 bg-[#0D47A1] text-white flex items-center justify-center rounded-xl text-[10px] font-bold uppercase hover:bg-[#004d99] transition-all shadow-sm active:scale-95 gap-2">
         <Navigation className="w-3 h-3" /> Navigate
       </button>
     </div>

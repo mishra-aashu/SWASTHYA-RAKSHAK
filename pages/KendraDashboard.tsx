@@ -34,19 +34,19 @@ const KendraDashboard = () => {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-wrap justify-between items-center gap-4">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-[#003366] rounded-xl flex items-center justify-center text-white shadow-inner">
+              <div className="w-12 h-12 bg-[#0D47A1] rounded-xl flex items-center justify-center text-white shadow-inner">
                 <Building2 className="w-7 h-7" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-[#003366] font-heading">PHC Patna Sadar</h2>
-                <p className="text-xs text-gray-500 font-medium font-heading">Reporting ID: <span className="font-mono text-[#FF9933]">BR-PAT-SDR-101</span></p>
+                <h2 className="text-xl font-bold text-[#0D47A1] font-heading">PHC Patna Sadar</h2>
+                <p className="text-xs text-gray-500 font-medium font-heading">Reporting ID: <span className="font-mono text-[#FFC107]">BR-PAT-SDR-101</span></p>
               </div>
             </div>
             <div className="flex gap-3">
               <button className="bg-white border-2 border-gray-100 px-4 py-2 rounded-xl text-xs font-bold text-gray-600 hover:border-gray-200 transition-all flex items-center gap-2">
                 <Download className="w-4 h-4" /> Export Data
               </button>
-              <button className="bg-[#003366] text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow-lg hover:bg-[#004d99] transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
+              <button className="bg-[#0D47A1] text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow-lg hover:bg-[#004d99] transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
                 <Send className="w-4 h-4" /> सरकार को भेजें | Submit Reports
               </button>
             </div>
@@ -57,7 +57,7 @@ const KendraDashboard = () => {
       <div className="max-w-7xl mx-auto px-4 py-8 space-y-8 animate-fadeIn">
         {/* Quick Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <KendraStat label="Daily Admissions" value="248" trend="+12%" icon={<Users className="w-6 h-6" />} color="#003366" />
+          <KendraStat label="Daily Admissions" value="248" trend="+12%" icon={<Users className="w-6 h-6" />} color="#0D47A1" />
           <KendraStat label="Active Warnings" value="02" trend="Action" icon={<Biohazard className="w-6 h-6" />} color="#DC2626" />
           <KendraStat label="Medicine Stocks" value="85%" trend="Normal" icon={<Package className="w-6 h-6" />} color="#138808" />
           <KendraStat label="Reporting Status" value="Live" trend="Online" icon={<Radio className="w-6 h-6" />} color="#0066cc" />
@@ -66,10 +66,10 @@ const KendraDashboard = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Quick Update Form */}
           <div className="lg:col-span-1 space-y-8">
-            <div className="bg-white p-8 rounded-2xl shadow-xl border-t-8 border-[#003366] relative overflow-hidden">
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-t-8 border-[#0D47A1] relative overflow-hidden">
               <ClipboardList className="absolute top-0 right-0 w-24 h-24 opacity-5 -mr-4 -mt-4" />
               <h3 className="text-xl font-bold text-gray-800 mb-8 font-heading flex items-center gap-2">
-                <FileText className="w-5 h-5 text-[#003366]" /> Case Reporting | केस रिपोर्टिंग
+                <FileText className="w-5 h-5 text-[#0D47A1]" /> Case Reporting | केस रिपोर्टिंग
               </h3>
               <div className="space-y-6">
                 <div>
@@ -77,7 +77,7 @@ const KendraDashboard = () => {
                   <select 
                     value={form.disease}
                     onChange={(e) => setForm({...form, disease: e.target.value})}
-                    className="w-full p-4 bg-gray-50 border-2 border-transparent rounded-xl outline-none focus:border-[#003366] focus:bg-white transition-all font-medium text-sm"
+                    className="w-full p-4 bg-gray-50 border-2 border-transparent rounded-xl outline-none focus:border-[#0D47A1] focus:bg-white transition-all font-medium text-sm"
                   >
                     <option>Dengue</option>
                     <option>Malaria</option>
@@ -94,7 +94,7 @@ const KendraDashboard = () => {
                     placeholder="e.g. 5"
                     value={form.count}
                     onChange={(e) => setForm({...form, count: e.target.value})}
-                    className="w-full p-4 bg-gray-50 border-2 border-transparent rounded-xl outline-none focus:border-[#003366] focus:bg-white transition-all font-medium text-lg"
+                    className="w-full p-4 bg-gray-50 border-2 border-transparent rounded-xl outline-none focus:border-[#0D47A1] focus:bg-white transition-all font-medium text-lg"
                   />
                 </div>
                 <div>
@@ -104,14 +104,14 @@ const KendraDashboard = () => {
                       <button 
                         key={lvl}
                         onClick={() => setForm({...form, severity: lvl})}
-                        className={`py-3 rounded-xl text-[10px] font-bold uppercase transition-all border-2 font-heading ${form.severity === lvl ? 'bg-[#003366] text-white border-[#003366] shadow-md' : 'bg-white text-gray-400 border-gray-100 hover:border-gray-200'}`}
+                        className={`py-3 rounded-xl text-[10px] font-bold uppercase transition-all border-2 font-heading ${form.severity === lvl ? 'bg-[#0D47A1] text-white border-[#0D47A1] shadow-md' : 'bg-white text-gray-400 border-gray-100 hover:border-gray-200'}`}
                       >
                         {lvl}
                       </button>
                     ))}
                   </div>
                 </div>
-                <button className="w-full bg-[#FF9933] text-white p-5 rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all mt-4 transform hover:-translate-y-1 active:scale-[0.98] text-sm flex items-center justify-center gap-2">
+                <button className="w-full bg-[#FFC107] text-white p-5 rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all mt-4 transform hover:-translate-y-1 active:scale-[0.98] text-sm flex items-center justify-center gap-2">
                   <CheckCircle className="w-5 h-5" /> रिपोर्ट सबमिट करें | Submit Case
                 </button>
               </div>
@@ -119,7 +119,7 @@ const KendraDashboard = () => {
 
             <div className="bg-white p-8 rounded-2xl shadow-lg">
               <h3 className="text-lg font-bold text-gray-800 mb-6 font-heading flex items-center gap-2">
-                <Package className="w-5 h-5 text-[#003366]" /> Stock Alerts | इन्वेंटरी
+                <Package className="w-5 h-5 text-[#0D47A1]" /> Stock Alerts | इन्वेंटरी
               </h3>
               <div className="space-y-4">
                 <StockItem name="ORS (500ml)" stock={42} min={100} unit="packets" />
@@ -136,7 +136,7 @@ const KendraDashboard = () => {
               <div className="flex items-center justify-between mb-8">
                 <h3 className="text-xl font-bold text-gray-800 font-heading">Patient Inflow Analysis</h3>
                 <div className="flex items-center gap-2">
-                   <div className="w-3 h-3 bg-[#003366] rounded-full"></div>
+                   <div className="w-3 h-3 bg-[#0D47A1] rounded-full"></div>
                    <span className="text-[10px] font-bold text-gray-400 uppercase font-heading">Daily Cases</span>
                 </div>
               </div>
@@ -145,8 +145,8 @@ const KendraDashboard = () => {
                   <AreaChart data={chartData}>
                     <defs>
                       <linearGradient id="colorCount" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#003366" stopOpacity={0.1}/>
-                        <stop offset="95%" stopColor="#003366" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="#0D47A1" stopOpacity={0.1}/>
+                        <stop offset="95%" stopColor="#0D47A1" stopOpacity={0}/>
                       </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
@@ -155,7 +155,7 @@ const KendraDashboard = () => {
                     <Tooltip 
                       contentStyle={{borderRadius: '16px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)'}}
                     />
-                    <Area type="monotone" dataKey="count" stroke="#003366" strokeWidth={4} fillOpacity={1} fill="url(#colorCount)" animationDuration={1500} />
+                    <Area type="monotone" dataKey="count" stroke="#0D47A1" strokeWidth={4} fillOpacity={1} fill="url(#colorCount)" animationDuration={1500} />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
@@ -164,7 +164,7 @@ const KendraDashboard = () => {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                <div className="p-8 border-b flex items-center justify-between bg-gray-50/50">
                  <h3 className="text-lg font-bold text-gray-800 font-heading">Case Logs | प्रविष्टि इतिहास</h3>
-                 <button className="text-[#003366] text-[10px] font-bold uppercase tracking-widest hover:text-[#FF9933] transition-colors border border-gray-200 px-3 py-1.5 rounded-lg bg-white font-heading">Full History</button>
+                 <button className="text-[#0D47A1] text-[10px] font-bold uppercase tracking-widest hover:text-[#FFC107] transition-colors border border-gray-200 px-3 py-1.5 rounded-lg bg-white font-heading">Full History</button>
                </div>
                <div className="overflow-x-auto">
                  <table className="w-full text-left">
@@ -181,10 +181,10 @@ const KendraDashboard = () => {
                      {mockReports.map((report) => (
                        <tr key={report.id} className="hover:bg-blue-50/30 transition-colors group">
                          <td className="px-8 py-5">
-                           <p className="font-bold text-gray-800 group-hover:text-[#003366] transition-colors font-heading">{report.disease_name}</p>
+                           <p className="font-bold text-gray-800 group-hover:text-[#0D47A1] transition-colors font-heading">{report.disease_name}</p>
                            <p className="text-[10px] text-gray-400 font-medium font-heading">{report.disease_name_hindi}</p>
                          </td>
-                         <td className="px-8 py-5 font-mono font-black text-[#003366]">{report.patient_count}</td>
+                         <td className="px-8 py-5 font-mono font-black text-[#0D47A1]">{report.patient_count}</td>
                          <td className="px-8 py-5">
                             <span className={`px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-tighter font-heading ${report.severity === 'high' ? 'bg-red-50 text-red-600 border border-red-100' : 'bg-orange-50 text-orange-600 border border-orange-100'}`}>
                               {report.severity}
@@ -236,7 +236,7 @@ const StockItem = ({ name, stock, min, unit }: any) => {
         <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-0.5 font-heading">Alert Level: {isLow ? 'Critical' : 'Safe'}</p>
       </div>
       <div className="text-right">
-        <p className={`text-xl font-black leading-none font-heading ${isLow ? 'text-red-600' : 'text-[#003366]'}`}>{stock}</p>
+        <p className={`text-xl font-black leading-none font-heading ${isLow ? 'text-red-600' : 'text-[#0D47A1]'}`}>{stock}</p>
         <p className="text-[8px] font-bold text-gray-400 uppercase tracking-widest mt-1 font-heading">{unit}</p>
       </div>
     </div>

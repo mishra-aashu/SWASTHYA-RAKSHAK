@@ -41,8 +41,8 @@ const LoginPage = () => {
     <div className="min-h-screen flex flex-col bg-[#F3F4F6]">
       <TricolorBar />
       <div className="flex-1 flex flex-col items-center justify-center p-4">
-        <div className="max-w-md w-full bg-white rounded-xl shadow-2xl overflow-hidden border-t-8 border-[#003366]">
-          <div className="bg-[#003366] p-8 text-center relative overflow-hidden">
+        <div className="max-w-md w-full bg-white rounded-xl shadow-2xl overflow-hidden border-t-8 border-[#0D47A1]">
+          <div className="bg-[#0D47A1] p-8 text-center relative overflow-hidden">
             {/* Subtle background pattern using Plus icons instead of unicode symbols */}
             <div className="absolute -right-4 -bottom-4 opacity-5 text-white">
               <Plus className="w-32 h-32" />
@@ -54,7 +54,7 @@ const LoginPage = () => {
             </div>
             <h2 className="text-white text-3xl font-bold font-heading relative">स्वास्थ्य रक्षक</h2>
             <p className="text-white/80 text-sm mt-1 font-medium relative">Swasthya Rakshak</p>
-            <div className="mt-2 inline-block bg-[#FF9933] text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-tighter">
+            <div className="mt-2 inline-block bg-[#FFC107] text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-tighter">
               National Health Surveillance System
             </div>
           </div>
@@ -75,10 +75,10 @@ const LoginPage = () => {
               <button 
                 onClick={handleGoogleLogin}
                 disabled={isLoggingIn}
-                className={`w-full flex items-center justify-center gap-3 bg-white border-2 border-gray-200 hover:border-[#003366] p-4 rounded-lg transition-all transform hover:-translate-y-1 active:scale-95 group shadow-sm ${isLoggingIn ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`w-full flex items-center justify-center gap-3 bg-white border-2 border-gray-200 hover:border-[#0D47A1] p-4 rounded-lg transition-all transform hover:-translate-y-1 active:scale-95 group shadow-sm ${isLoggingIn ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 {isLoggingIn ? (
-                  <div className="w-6 h-6 border-2 border-[#003366] border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-6 h-6 border-2 border-[#0D47A1] border-t-transparent rounded-full animate-spin"></div>
                 ) : (
                   <svg className="w-6 h-6" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>

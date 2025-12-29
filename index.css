@@ -1,6 +1,7 @@
 body {
   background-color: #F3F4F6;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color: #212121;
 }
 
 .min-h-screen {
@@ -55,12 +56,12 @@ body {
   border-top-width: 8px;
 }
 
-.border-[#003366] {
-  border-color: #003366;
+.border-[#0D47A1] {
+  border-color: #0D47A1;
 }
 
-.bg-[#003366] {
-  background-color: #003366;
+.bg-[#0D47A1] {
+  background-color: #0D47A1;
 }
 
 .p-8 {
@@ -117,7 +118,7 @@ body {
   display: inline-block;
 }
 
-.bg-[#FF9933] {
+#FFC107
   background-color: #FF9933;
 }
 
@@ -200,8 +201,8 @@ body {
   border-color: #E5E7EB;
 }
 
-.hover\:border-[#003366]:hover {
-  border-color: #003366;
+.hover\:border-[#0D47A1]:hover {
+  border-color: #0D47A1;
 }
 
 .p-4 {
