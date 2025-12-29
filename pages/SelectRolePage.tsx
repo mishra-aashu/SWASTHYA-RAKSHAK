@@ -3,7 +3,7 @@ import React from 'react';
 import { useAuth } from '../App';
 import { useNavigate } from 'react-router-dom';
 import { Role } from '../types';
-import { User, Hospital, ArrowRight } from 'lucide-react';
+import { User, Building2, ArrowRight } from 'lucide-react';
 
 const SelectRolePage = () => {
   const { login } = useAuth();
@@ -30,7 +30,7 @@ const SelectRolePage = () => {
             onClick={() => handleSelect('user')}
           />
           <RoleCard 
-            icon={<Hospital className="w-12 h-12" />}
+            icon={<Building2 className="w-12 h-12" />}
             title="स्वास्थ्य केंद्र | Health Kendra"
             desc="Report disease cases, manage medicine stock, and monitor local trends."
             onClick={() => handleSelect('kendra')}

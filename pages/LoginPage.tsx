@@ -4,7 +4,7 @@ import { useAuth } from '../App';
 import { useNavigate } from 'react-router-dom';
 import { TricolorBar } from '../constants';
 import { signInWithGoogle } from '../lib/supabase';
-import { Hospital, MapPin, Bot, User, Plus } from 'lucide-react';
+import { Building2, MapPin, Bot, User, Plus } from 'lucide-react';
 
 const LoginPage = () => {
   const { login } = useAuth();
@@ -49,7 +49,7 @@ const LoginPage = () => {
             </div>
             <div className="mb-4 flex justify-center relative">
               <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
-                <Hospital className="w-12 h-12 text-white drop-shadow-lg" />
+                <Building2 className="w-12 h-12 text-white drop-shadow-lg" />
               </div>
             </div>
             <h2 className="text-white text-3xl font-bold font-heading relative">स्वास्थ्य रक्षक</h2>

@@ -84,27 +84,41 @@ const App = () => {
   const [user, setUser] = useState<UserProfile | null>(null);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    const fetchSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
       if (session) {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('role, full_name, avatar_url')
+          .eq('id', session.user.id)
+          .single();
+
         setUser({
           id: session.user.id,
           email: session.user.email || '',
-          full_name: session.user.user_metadata.full_name || 'User',
-          avatar_url: session.user.user_metadata.avatar_url || '',
-          role: 'user',
+          full_name: profile?.full_name || session.user.user_metadata.full_name || 'User',
+          avatar_url: profile?.avatar_url || session.user.user_metadata.avatar_url || '',
+          role: profile?.role as Role || 'user',
           district: 'Patna'
         });
       }
-    });
+    };
+    fetchSession();
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       if (session) {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('role, full_name, avatar_url')
+          .eq('id', session.user.id)
+          .single();
+
         setUser({
           id: session.user.id,
           email: session.user.email || '',
-          full_name: session.user.user_metadata.full_name || 'User',
-          avatar_url: session.user.user_metadata.avatar_url || '',
-          role: 'user',
+          full_name: profile?.full_name || session.user.user_metadata.full_name || 'User',
+          avatar_url: profile?.avatar_url || session.user.user_metadata.avatar_url || '',
+          role: profile?.role as Role || 'user',
           district: 'Patna'
         });
       } else {

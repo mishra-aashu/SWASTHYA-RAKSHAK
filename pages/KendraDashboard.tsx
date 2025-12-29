@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { mockReports } from '../data/mockData';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { 
-  Hospital, 
+  Building2, 
   FileText, 
   Users, 
   Biohazard, 
@@ -35,7 +35,7 @@ const KendraDashboard = () => {
           <div className="flex flex-wrap justify-between items-center gap-4">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-[#003366] rounded-xl flex items-center justify-center text-white shadow-inner">
-                <Hospital className="w-7 h-7" />
+                <Building2 className="w-7 h-7" />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-[#003366] font-heading">PHC Patna Sadar</h2>
