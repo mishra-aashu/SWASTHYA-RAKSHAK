@@ -1,11 +1,28 @@
 :root {
-  --primary-color: #0D47A1;
-  --secondary-color: #FFC107;
-  --text-color: #212121;
-  --background-color: #F3F4F6;
+  --primary-color: #1e3a8a; /* Darker navy blue for governmental feel */
+  --primary-light-color: #e0e7ff;
+  --secondary-color: #64748b; /* Lighter gray for better visibility */
+  --text-color: #111827;
+  --text-primary-color: #374151;
+  --text-secondary-color: #6b7280;
+  --text-tertiary-color: #9ca3af;
+  --text-heavy-color: #1f2937;
+  --background-color: #f8fafc; /* Slightly whiter background */
+  --background-secondary-color: #f1f5f9;
   --white-color: #FFFFFF;
   --saffron-color: #FF9933;
-  --green-color: #138808;
+  --green-color: #15803d;
+  --green-light-color: #f0fdf4;
+  --green-lighter-color: #dcfce7;
+  --alert-critical-color: #dc2626;
+  --alert-critical-light-color: #fef2f2;
+  --alert-critical-lighter-color: #fee2e2;
+  --alert-medium-color: #ea580c;
+  --alert-medium-light-color: #fff7ed;
+  --alert-medium-lighter-color: #ffedd5;
+  --border-color: #d1d5db;
+  --icon-color: #9ca3af;
 
-  --font-family: 'Roboto', sans-serif;
+  --font-family: 'Roboto', sans-serif; /* Sans-serif for better readability */
+  --font-family-sans: 'Roboto', sans-serif; /* Keep sans for body if needed */
 }

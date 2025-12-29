@@ -8,7 +8,7 @@
 
 .headerContainer {
   background-color: var(--white-color);
-  border-bottom: 1px solid #e5e7eb; /* border-b */
+  border-bottom: 1px solid var(--border-color); /* border-b */
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
   position: sticky;
   top: 72px;
@@ -61,7 +61,7 @@
 
 .kendraReportingId {
   font-size: 0.875rem; /* text-sm */
-  color: #6b7280; /* text-gray-500 */
+  color: var(--text-secondary-color); /* text-gray-500 */
   font-weight: 500; /* font-medium */
 }
 
@@ -77,12 +77,12 @@
 
 .exportButton {
   background-color: var(--white-color);
-  border: 2px solid #e5e7eb; /* border-2 border-gray-100 */
+  border: 2px solid var(--border-color); /* border-2 border-gray-100 */
   padding: 0.625rem 1rem; /* px-4 py-2.5 */
   border-radius: 0.75rem; /* rounded-xl */
   font-size: 0.875rem; /* text-sm */
   font-weight: 700; /* font-bold */
-  color: #4b5563; /* text-gray-600 */
+  color: var(--text-primary-color); /* text-gray-600 */
   transition: all 150ms ease-in-out;
   display: flex;
   align-items: center;
@@ -90,7 +90,7 @@
 }
 
 .exportButton:hover {
-  border-color: #e5e7eb; /* hover:border-gray-200 */
+  border-color: var(--border-color); /* hover:border-gray-200 */
 }
 
 .submitButton {
@@ -121,13 +121,10 @@
   max-width: 80rem; /* max-w-7xl */
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem; /* px-4 sm:px-6 lg:px-8 */
-  padding-right: 1rem; /* px-4 sm:px-6 lg:px-8 */
-  padding-top: 2rem; /* py-8 */
-  padding-bottom: 2rem; /* py-8 */
+  padding: 3rem 2rem; /* Increased padding */
   display: flex;
   flex-direction: column;
-  gap: 3rem; /* space-y-12 */
+  gap: 4rem; /* Increased gap */
 }
 
 .statsGrid {
@@ -176,7 +173,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f9fafb; /* bg-gray-50 */
+  background-color: var(--background-secondary-color); /* bg-gray-50 */
   box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); /* shadow-inner */
   transition: all 150ms ease-in-out;
 }
@@ -288,7 +285,7 @@
 .formInput {
   width: 100%;
   padding: 1rem; /* p-4 */
-  background-color: #f9fafb; /* bg-gray-50 */
+  background-color: var(--background-secondary-color); /* bg-gray-50 */
   border: 2px solid transparent;
   border-radius: 0.75rem; /* rounded-xl */
   outline: none;
@@ -333,11 +330,11 @@
 .severityButtonInactive {
   background-color: var(--white-color);
   color: #9ca3af; /* text-gray-400 */
-  border-color: #e5e7eb; /* border-gray-100 */
+  border-color: var(--border-color); /* border-gray-100 */
 }
 
 .severityButtonInactive:hover {
-  border-color: #e5e7eb; /* hover:border-gray-200 */
+  border-color: var(--border-color); /* hover:border-gray-200 */
 }
 
 .submitCaseButton {
@@ -417,7 +414,7 @@
 }
 
 .stockItemSafe {
-  background-color: #f9fafb; /* bg-gray-50 */
+  background-color: var(--background-secondary-color); /* bg-gray-50 */
   border-color: #f9fafb; /* border-gray-50 */
 }
 
@@ -474,7 +471,7 @@
   padding: 2rem; /* p-8 */
   border-radius: 1rem; /* rounded-2xl */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-  border: 1px solid #e5e7eb; /* border border-gray-100 */
+  border: 1px solid var(--border-color); /* border border-gray-100 */
 }
 
 .patientInflowHeader {
@@ -520,12 +517,12 @@
   border-radius: 1rem; /* rounded-2xl */
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
   overflow: hidden;
-  border: 1px solid #e5e7eb; /* border border-gray-100 */
+  border: 1px solid var(--border-color); /* border border-gray-100 */
 }
 
 .caseLogsHeader {
   padding: 2rem; /* p-8 */
-  border-bottom: 1px solid #e5e7eb; /* border-b */
+  border-bottom: 1px solid var(--border-color); /* border-b */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -545,7 +542,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em; /* tracking-widest */
   transition: all 150ms ease-in-out;
-  border: 1px solid #e5e7eb; /* border border-gray-200 */
+  border: 1px solid var(--border-color); /* border border-gray-200 */
   padding: 0.375rem 0.75rem; /* px-3 py-1.5 */
   border-radius: 0.5rem; /* rounded-lg */
   background-color: var(--white-color);
@@ -565,7 +562,7 @@
 }
 
 .tableHead {
-  background-color: #f9fafb; /* bg-gray-50 */
+  background-color: var(--background-secondary-color); /* bg-gray-50 */
   font-size: 0.75rem; /* text-xs */
   font-weight: 700; /* font-bold */
   color: #9ca3af; /* text-gray-400 */
@@ -580,7 +577,7 @@
 
 .tableBody {
   font-size: 0.875rem; /* text-sm */
-  border-top: 1px solid #e5e7eb; /* divide-y */
+  border-top: 1px solid var(--border-color); /* divide-y */
 }
 
 .tableRow {

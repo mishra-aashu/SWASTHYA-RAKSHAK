@@ -7,7 +7,7 @@
 }
 
 .emergencyBanner {
-  background-color: #dc2626; /* bg-red-600 */
+  background-color: var(--alert-critical-color); /* bg-red-600 */
   color: var(--white-color);
   padding: 1rem; /* p-4 */
   text-align: center;
@@ -36,13 +36,10 @@
   max-width: 80rem; /* max-w-7xl */
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem; /* px-4 */
-  padding-right: 1rem; /* px-4 */
-  padding-top: 2rem; /* py-8 */
-  padding-bottom: 2rem; /* py-8 */
+  padding: 3rem 2rem; /* Increased padding */
   display: flex;
   flex-direction: column;
-  gap: 3rem; /* space-y-12 */
+  gap: 4rem; /* Increased gap */
 }
 
 .topSection {
@@ -82,7 +79,7 @@
 }
 
 .currentActiveZoneLabel {
-  color: #6b7280; /* text-gray-500 */
+  color: var(--text-secondary-color); /* text-gray-500 */
   font-size: 0.75rem; /* text-xs */
   font-weight: 700; /* font-bold */
   text-transform: uppercase;
@@ -137,9 +134,10 @@
 
 .statsCard {
   background-color: var(--white-color);
-  padding: 1.5rem; /* p-6 */
+  padding: 2rem; /* Increased padding */
   border-radius: 1rem; /* rounded-2xl */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+  border: 2px solid var(--border-color); /* Add border for structure */
   border-bottom: 4px solid;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -165,16 +163,17 @@
 .statsCardLabel {
   font-size: 0.75rem; /* text-xs */
   font-weight: 700; /* font-bold */
-  color: #9ca3af; /* text-gray-400 */
+  color: var(--text-tertiary-color); /* text-gray-400 */
   text-transform: uppercase;
   letter-spacing: 0.05em; /* tracking-widest */
 }
 
 .healthScoreCard {
   background-color: var(--white-color);
-  padding: 2rem; /* p-8 */
+  padding: 3rem; /* Increased padding */
   border-radius: 1rem; /* rounded-2xl */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+  border: 2px solid var(--border-color); /* Add border */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -194,7 +193,7 @@
 }
 
 .healthScoreCardLabel {
-  color: #6b7280; /* text-gray-500 */
+  color: var(--text-secondary-color); /* text-gray-500 */
   font-size: 0.75rem; /* text-xs */
   font-weight: 700; /* font-bold */
   text-transform: uppercase;
@@ -221,7 +220,7 @@
   cx: 96; /* 88+8 */
   cy: 96; /* 88+8 */
   r: 84; /* 75+9 */
-  stroke: #e5e7eb; /* #E5E7EB */
+  stroke: var(--border-color); /* #E5E7EB */
   stroke-width: 1rem; /* 16 */
   fill: transparent;
 }
@@ -267,7 +266,7 @@
 .healthScoreUpdateInfo {
   margin-top: 1.5rem; /* mt-6 */
   font-size: 0.75rem; /* text-xs */
-  color: #9ca3af; /* text-gray-400 */
+  color: var(--text-tertiary-color); /* text-gray-400 */
   font-weight: 500; /* font-medium */
 }
 
@@ -276,13 +275,13 @@
   border-radius: 1rem; /* rounded-2xl */
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
   overflow: hidden;
-  border: 1px solid #e5e7eb; /* border border-gray-100 */
+  border: 1px solid var(--border-color); /* border border-gray-100 */
 }
 
 .tabButtonsContainer {
   display: flex;
-  background-color: #f9fafb; /* bg-gray-50 */
-  border-bottom: 1px solid #e5e7eb; /* border-b */
+  background-color: var(--background-secondary-color); /* bg-gray-50 */
+  border-bottom: 1px solid var(--border-color);
   overflow-x: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -301,11 +300,11 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   border-bottom: 4px solid transparent;
-  color: #9ca3af; /* text-gray-400 */
+  color: var(--text-tertiary-color); /* text-gray-400 */
 }
 
 .tabButton:hover {
-  color: #4b5563; /* hover:text-gray-600 */
+  color: var(--text-primary-color);
   background-color: rgba(243, 244, 246, 0.5); /* hover:bg-gray-100/50 */
 }
 
@@ -365,7 +364,7 @@
 
 .predictionsSubtitle {
   font-size: 0.875rem; /* text-sm */
-  color: #6b7280; /* text-gray-500 */
+  color: var(--text-secondary-color); /* text-gray-500 */
 }
 
 .predictionsLiveStatus {
@@ -405,7 +404,7 @@
 .symptomCheckerIconWrapper {
   width: 5rem; /* w-20 */
   height: 5rem; /* h-20 */
-  background-color: #eff6ff; /* bg-blue-50 */
+  background-color: var(--primary-light-color); /* bg-blue-50 */
   border-radius: 9999px; /* rounded-full */
   display: flex;
   align-items: center;
@@ -427,7 +426,7 @@
 }
 
 .symptomCheckerSubtitle {
-  color: #6b7280; /* text-gray-500 */
+  color: var(--text-secondary-color); /* text-gray-500 */
   margin-top: 0.5rem; /* mt-2 */
   margin-bottom: 2rem; /* mb-8 */
   line-height: 1.625; /* leading-relaxed */
@@ -451,12 +450,12 @@
   transform: translateY(-50%);
   width: 1.5rem; /* w-6 */
   height: 1.5rem; /* h-6 */
-  color: #d1d5db; /* text-gray-300 */
+  color: var(--icon-color); /* text-gray-300 */
 }
 
 .symptomInput {
   width: 100%;
-  border: 2px solid #e5e7eb; /* border-2 border-gray-100 */
+  border: 2px solid var(--border-color); /* border-2 border-gray-100 */
   padding: 1.25rem 1.25rem 1.25rem 3.5rem; /* p-5 pl-14 */
   border-radius: 1rem; /* rounded-2xl */
   outline: none;
@@ -473,7 +472,7 @@
 }
 
 .symptomInput:hover {
-  border-color: #e5e7eb; /* group-hover:border-gray-200 */
+  border-color: var(--border-color); /* group-hover:border-gray-200 */
 }
 
 .analyzeButton {
@@ -568,7 +567,7 @@
 .analysisResultHeaderPoweredBy {
   font-size: 0.75rem; /* text-xs */
   font-weight: 700; /* font-bold */
-  color: #9ca3af; /* text-gray-400 */
+  color: var(--text-tertiary-color); /* text-gray-400 */
 }
 
 .analysisResultBody {
@@ -588,7 +587,7 @@
 
 .analysisResultConditionHindi {
   font-size: 0.875rem; /* text-sm */
-  color: #6b7280; /* text-gray-500 */
+  color: var(--text-secondary-color); /* text-gray-500 */
   font-weight: 500; /* font-medium */
 }
 
@@ -601,16 +600,16 @@
 
 .analysisResultRiskItem {
   flex: 1;
-  background-color: #f9fafb; /* bg-gray-50 */
+  background-color: var(--background-secondary-color); /* bg-gray-50 */
   padding: 0.75rem; /* p-3 */
   border-radius: 0.75rem; /* rounded-xl */
-  border: 1px solid #e5e7eb; /* border border-gray-100 */
+  border: 1px solid var(--border-color); /* border border-gray-100 */
 }
 
 .analysisResultRiskLabel {
   font-size: 0.625rem; /* text-xs */
   font-weight: 700; /* font-bold */
-  color: #9ca3af; /* text-gray-400 */
+  color: var(--text-tertiary-color); /* text-gray-400 */
   text-transform: uppercase;
   letter-spacing: 0.05em; /* tracking-widest */
   margin-bottom: 0.25rem; /* mb-1 */
@@ -665,7 +664,7 @@
 .analysisResultPrecautionsLabel {
   font-size: 0.75rem; /* text-xs */
   font-weight: 700; /* font-bold */
-  color: #9ca3af; /* text-gray-400 */
+  color: var(--text-tertiary-color); /* text-gray-400 */
   text-transform: uppercase;
   letter-spacing: 0.05em; /* tracking-widest */
 }
@@ -676,7 +675,7 @@
   gap: 0.5rem; /* gap-2 */
   font-size: 0.875rem; /* text-sm */
   font-weight: 500; /* font-medium */
-  color: #4b5563; /* text-gray-600 */
+  color: var(--text-primary-color); /* text-gray-600 */
 }
 
 .analysisResultPrecautionIcon {
@@ -687,7 +686,7 @@
 
 .disclaimerText {
   font-size: 0.75rem; /* text-xs */
-  color: #9ca3af; /* text-gray-400 */
+  color: var(--text-tertiary-color); /* text-gray-400 */
   font-weight: 500; /* font-medium */
   margin-top: 1rem; /* mt-4 (adjust as needed) */
 }
@@ -758,7 +757,7 @@
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-  border: 1px solid #e5e7eb; /* border border-gray-100 */
+  border: 1px solid var(--border-color); /* border border-gray-100 */
   position: relative;
 }
 
@@ -790,7 +789,7 @@
 .advisoryItemIconWrapper {
   width: 3rem; /* w-12 */
   height: 3rem; /* h-12 */
-  background-color: #eff6ff; /* bg-blue-50 */
+  background-color: var(--primary-light-color); /* bg-blue-50 */
   border-radius: 0.75rem; /* rounded-xl */
   display: flex;
   align-items: center;
@@ -813,13 +812,13 @@
 
 .advisoryItemTitle {
   font-weight: 700; /* font-bold */
-  color: #1f2937; /* text-gray-800 */
+  color: var(--text-heavy-color); /* text-gray-800 */
   margin-bottom: 0.5rem; /* mb-2 */
 }
 
 .advisoryItemText {
   font-size: 0.75rem; /* text-xs */
-  color: #6b7280; /* text-gray-500 */
+  color: var(--text-secondary-color); /* text-gray-500 */
   line-height: 1.625; /* leading-relaxed */
   font-weight: 500; /* font-medium */
 }
@@ -889,7 +888,7 @@
   padding: 1.5rem; /* p-6 */
   border-radius: 1rem; /* rounded-2xl */
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-sm */
-  border: 1px solid #e5e7eb; /* border border-gray-100 */
+  border: 1px solid var(--border-color); /* border border-gray-100 */
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -937,18 +936,18 @@
 }
 
 .kendraCardDistance {
-  background-color: #f0fdf4; /* bg-green-50 */
+  background-color: var(--green-light-color); /* bg-green-50 */
   color: var(--green-color);
   font-size: 0.75rem; /* text-xs */
   font-weight: 700; /* font-bold */
   padding: 0.25rem 0.625rem; /* px-2.5 py-1 */
   border-radius: 9999px; /* rounded-full */
-  border: 1px solid #dcfce7; /* border border-green-100 */
+  border: 1px solid var(--green-lighter-color); /* border border-green-100 */
 }
 
 .kendraCardAddress {
   font-size: 0.875rem; /* text-sm */
-  color: #6b7280; /* text-gray-500 */
+  color: var(--text-secondary-color); /* text-gray-500 */
   margin-bottom: 1.5rem; /* mb-6 */
   font-weight: 500; /* font-medium */
   flex: 1;
@@ -967,7 +966,7 @@
   font-size: 0.75rem; /* text-xs */
   font-weight: 700; /* font-bold */
   text-transform: uppercase;
-  color: #4b5563; /* text-gray-700 */
+  color: var(--text-primary-color); /* text-gray-700 */
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -978,7 +977,7 @@
 }
 
 .kendraCardActionButton:hover {
-  background-color: #e5e7eb; /* hover:bg-gray-200 */
+  background-color: var(--border-color); /* hover:bg-gray-200 */
 }
 
 .kendraCardActionButton:active {
@@ -993,4 +992,181 @@
 
 .kendraCardActionButtonPrimary:hover {
   background-color: rgba(13, 71, 161, 0.9); /* hover:bg-opacity-90 */
+}
+
+/* Prediction Card Styles */
+.predictionCard {
+  background-color: var(--white-color);
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+  transition: all 150ms ease-in-out;
+}
+
+.predictionCard:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
+}
+
+.predictionCardRiskBar {
+  height: 0.5rem; /* h-2 */
+}
+
+.bgRed600 {
+  background-color: #dc2626; /* bg-red-600 */
+}
+
+.bgOrange500 {
+  background-color: #f97316; /* bg-orange-500 */
+}
+
+.predictionCardContent {
+  padding: 1.5rem; /* p-6 */
+}
+
+.predictionCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.predictionCardTitle {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700; /* font-bold */
+  color: var(--primary-color);
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.predictionCardSubtitle {
+  font-size: 0.875rem; /* text-sm */
+  color: var(--text-secondary-color);
+  font-weight: 500; /* font-medium */
+}
+
+.predictionCardProbability {
+  text-align: right;
+}
+
+.predictionCardProbabilityValue {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 900; /* font-black */
+  color: var(--primary-color);
+}
+
+.predictionCardProbabilityLabel {
+  font-size: 0.75rem; /* text-xs */
+  color: var(--text-tertiary-color);
+  font-weight: 700; /* font-bold */
+  text-transform: uppercase;
+}
+
+.predictionCardPeakForecast {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+  margin-bottom: 1rem; /* mb-4 */
+  padding: 0.75rem; /* p-3 */
+  background-color: var(--background-secondary-color);
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+.predictionCardPeakForecastIcon {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+  color: var(--primary-color);
+}
+
+.predictionCardPeakForecastLabel {
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700; /* font-bold */
+  color: var(--text-tertiary-color);
+  text-transform: uppercase;
+}
+
+.predictionCardPeakForecastValue {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  color: var(--primary-color);
+}
+
+.predictionCardPrevention {
+  margin-top: 1rem; /* mt-4 */
+}
+
+.predictionCardPreventionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.predictionCardPreventionLabel {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700; /* font-bold */
+  color: var(--text-heavy-color);
+}
+
+.predictionCardPreventionPulse {
+  width: 0.75rem; /* w-3 */
+  height: 0.75rem; /* h-3 */
+  border-radius: 9999px; /* rounded-full */
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.bgRed500 {
+  background-color: #ef4444; /* bg-red-500 */
+}
+
+.predictionCardPreventionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* space-y-2 */
+}
+
+.predictionCardPreventionListItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem; /* gap-2 */
+  font-size: 0.875rem; /* text-sm */
+  color: var(--text-primary-color);
+}
+
+.predictionCardPreventionListItemIcon {
+  width: 1rem; /* w-4 */
+  height: 1rem; /* h-4 */
+  color: var(--green-color);
+  margin-top: 0.125rem; /* mt-0.5 */
+}
+
+.predictionCardPreventionListItemText {
+  line-height: 1.4;
+}
+
+.predictionCardFooter {
+  padding: 1rem 1.5rem; /* px-6 py-4 */
+  background-color: var(--background-secondary-color);
+  border-top: 1px solid var(--border-color);
+}
+
+.predictionCardFooterButton {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-weight: 700; /* font-bold */
+  font-size: 0.875rem; /* text-sm */
+  transition: all 150ms ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.predictionCardFooterButton:hover {
+  background-color: rgba(13, 71, 161, 0.9);
+  transform: translateY(-0.125rem);
 }

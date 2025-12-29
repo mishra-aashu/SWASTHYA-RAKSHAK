@@ -9,31 +9,34 @@
 
 .header {
   background-color: var(--primary-color);
-  padding: 1rem; /* px-4 */
-  padding-right: 1rem; /* md:px-8 */
-  padding-left: 1rem; /* md:px-8 */
-  padding-top: 1rem; /* py-4 */
-  padding-bottom: 1rem; /* py-4 */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  color: var(--white-color);
+  padding: 1rem 2rem; /* Reduced padding */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Subtle shadow */
   position: sticky;
   top: 0;
   z-index: 50;
+  border-bottom: 3px solid var(--secondary-color); /* Adjusted border */
+  display: flex;
+  align-items: center;
 }
 
 .headerContent {
   max-width: 80rem; /* max-w-7xl */
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem; /* gap-4 */
+  gap: 2rem; /* Increased gap */
 }
 
 .logoLink {
   opacity: 1;
   transition: opacity 150ms ease-in-out;
+  display: flex;
+  align-items: center;
 }
 
 .logoLink:hover {
@@ -63,7 +66,7 @@
 }
 
 .userRole {
-  color: var(--secondary-color);
+  color: var(--white-color); /* Changed to white for visibility */
   font-size: 0.625rem; /* text-xs */
   text-transform: uppercase;
   font-weight: 700; /* font-bold */
@@ -90,16 +93,16 @@
 .footer {
   background-color: var(--primary-color);
   color: var(--white-color);
-  padding-top: 2rem; /* py-8 */
-  padding-bottom: 2rem; /* py-8 */
+  padding: 3rem 2rem; /* Increased padding */
   border-top: 4px solid var(--secondary-color);
+  margin-top: 4rem; /* Add margin for separation */
 }
 
 .footerContent {
   max-width: 80rem; /* max-w-7xl */
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem; /* px-4 */
+  padding: 0 2rem;
   text-align: center;
 }
 
@@ -134,3 +137,5 @@
 .footerLink:hover {
   color: var(--secondary-color);
 }
+
+

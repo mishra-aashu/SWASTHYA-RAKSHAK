@@ -25,14 +25,14 @@ export const TricolorBar = () => (
 );
 
 export const GovLogo = () => (
-  <div className="flex items-center gap-3">
-    <div className="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center">
-       <Landmark className="text-[#0D47A1] w-6 h-6" />
+  <div style={{display: 'flex', alignItems: 'center', gap: '16px'}}>
+    <div style={{backgroundColor: 'white', padding: '8px', borderRadius: '8px', width: '56px', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'}}>
+       <Landmark style={{color: '#1e3a8a', width: '28px', height: '28px'}} />
     </div>
-    <div className="flex flex-col text-white">
-      <h1 className="text-lg font-bold leading-tight">स्वास्थ्य एवं परिवार कल्याण मंत्रालय</h1>
-      <p className="text-[10px] uppercase tracking-wider opacity-100">Ministry of Health & Family Welfare</p>
-      <p className="text-[10px] opacity-90">भारत सरकार | Government of India</p>
+    <div style={{display: 'flex', flexDirection: 'column', color: 'white', fontFamily: 'Roboto, sans-serif'}}>
+      <h1 style={{fontSize: '24px', fontWeight: 'bold', lineHeight: '1.2', marginBottom: '4px', fontFamily: 'Roboto, sans-serif'}}>स्वास्थ्य एवं परिवार कल्याण मंत्रालय</h1>
+      <p style={{fontSize: '14px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.025em', marginBottom: '4px', fontFamily: 'Roboto, sans-serif'}}>Ministry of Health & Family Welfare</p>
+      <p style={{fontSize: '14px', fontWeight: '500', fontFamily: 'Roboto, sans-serif'}}>भारत सरकार | Government of India</p>
     </div>
   </div>
 );
