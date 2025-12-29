@@ -1,0 +1,7 @@
+{
+  "name": "Swasthya Rakshak - National Health Surveillance System",
+  "description": "A comprehensive health monitoring platform for Patna, Bihar, featuring real-time disease tracking, location-based alerts, and predictive health analytics with a government-official bilingual interface.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
